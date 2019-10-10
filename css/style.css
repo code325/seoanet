@@ -1,0 +1,67 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+body {
+    margin: 0;
+}
+.nav {
+    padding: 5px 5px 5px 5px;
+}
+.content {
+    text-align: center;
+    background: white;
+    height: calc(100vh - 65px);
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  margin-top: 50px;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #6610f2;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: gray;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #6610f2;
+  background: #6610f2;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  top: 100px;
+  width: 80vw;
+  right: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding-top: 100px;
+}
+
+#logo{
+    font-size: 50px;
+}
