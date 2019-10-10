@@ -10,7 +10,7 @@
         <script>
             function view() {
                 var input = document.getElementById("input").value;
-                document.write(input);
+                location.href = "http://seoanet.herokuapp.com/search.php/?search="+input;
             }
         </script>
         <div class="nav">
