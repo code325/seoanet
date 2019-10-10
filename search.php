@@ -5,6 +5,8 @@ if ($sedata == "") {
 echo "검색어를 입력하세요";
 } else {
 $html = file_get_html('https://www.google.co.uk/search?hl=en&q='.$sedata);
-echo $html;
+foreach($html->find('div[class=BNeawe vvjwJb AP7Wnd]') as $e) {
+  echo $html->innertext;
+}
 }
 ?>
