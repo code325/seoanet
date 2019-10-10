@@ -4,8 +4,8 @@ $sedata = $_GET['search'];
 if ($sedata == "") {
 echo "검색어를 입력하세요";
 } else {
-$html = file_get_html('https://www.google.co.uk/search?hl=en&q='.$sedata);
-foreach($html->find('div[class=BNeawe vvjwJb AP7Wnd]') as $e) {
+$html = file_get_html('https://search.dcinside.com/combine/q/'.$sedata);
+foreach($html->find('div[class=link_dsc_txt]') as $e) {
   echo $html->innertext;
 }
 }
