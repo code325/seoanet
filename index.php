@@ -1,6 +1,6 @@
 <?php // spoofing headers with cURL
 
-$url = 'https://ko.infobyip.com/';
+$url = 'https://search.naver.com/search.naver?ie=UTF-8&query=%EB%82%B4%EC%95%84%EC%9D%B4%ED%94%BC&sm=chr_hty';
 $ip  = '1.1.1.1'; // trying to spoof ip..
 
 $header[0]  = "Accept: text/xml,application/xml,application/xhtml+xml,"; 
