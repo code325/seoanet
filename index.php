@@ -1,31 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css/style.css">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-    </head>
-    <body>
-        <script>
-            function view() {
-                var input = document.getElementById("input").value;
-                location.href = "http://seoanet.herokuapp.com/search.php/?search="+input;
-            }
-        </script>
-        <div class="nav">
-            Seoa Planet
-        </div>
-        <div class="content">
-            <div class="wrap">
-            <span id="logo">Seoa Planet</span>
-               <div class="search">
-                    <input type="text" class="searchTerm" placeholder="검색어를 입력하세요" id="input">
-                    <button type="submit" class="searchButton" onclick="view();">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+<?php
+
+$ip = '127.0.0.1';
+$port = '9051';
+$auth = 'PASSWORD';
+$command = 'signal NEWNYM';
+$fp = fsockopen($ip,$port,$error_number,$err_string,10);
+if(!$fp) { echo "ERROR: $error_number : $err_string";
+    return false;
+          } else {
+                     fwrite($fp,"AUTHENTICATE \"".$auth."\"\n");
+                     $received = fread($fp,512);
+                     fwrite($fp,$command."\n");
+                     $received = fread($fp,512);
+                 }
+ fclose($fp);
+ $ch = curl_init();
+ curl_setopt($ch, CURLOPT_URL, "http://whatismyip.org"); //ipimg.php
+ curl_setopt($ch, CURLOPT_PROXY, "127.0.0.1:9050");
+ curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5);
+ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+ curl_setopt($ch, CURLOPT_VERBOSE, 0);
+ $response = curl_exec($ch);
+ curl_close($ch);
+ echo $response;
+?>
